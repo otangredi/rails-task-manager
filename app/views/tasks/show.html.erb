@@ -1,6 +1,13 @@
 <h1 class="p-3"><%= @task.title %></h1>
 <p class="bg-secondary bg-opacity-25 p-3 border rounded"><%= @task.details %></p>
-<p>Completed: <%= @task.completed %></p>
+
+<div class="px-3">
+  <% if @task.completed == false %>
+    <p><i class="fa-regular fa-square"></i> This task is not completed yet</p>
+  <% else %>
+    <p><i class="fa-regular fa-square-check"></i> Completed</p>
+  <% end %>
+</div>
 
 <div class="px-3">
   <i class="fa-solid fa-arrow-rotate-left text-primary"></i>
