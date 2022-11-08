@@ -1,7 +1,13 @@
-<%= form_with model: task do |x| %>
-  <%= x.label :title %>
-  <%= x.text_field :title %>
-  <%= x.label :details %>
-  <%= x.text_field :details %>
+<div class="p-3 text-start">
+  <%= form_with model: task do |x| %>
+    <div class="mb-3">
+      <%= x.label :title %>
+      <div><%= x.text_field :title %></div>
+    </div>
+    <div class="mb-3">
+      <%= x.label :details %>
+      <div><%= x.text_field :details %></div>
+    </div>
   <%= x.submit %>
-<% end %>
+  <% end %>
+</div>

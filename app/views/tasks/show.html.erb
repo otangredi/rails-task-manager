@@ -1,5 +1,20 @@
-<h1><%= @task.title %></h1>
-<h3>Details: <%= @task.details %></h3>
+<h1 class="p-3"><%= @task.title %></h1>
+<p class="bg-secondary bg-opacity-25 p-3 border rounded"><%= @task.details %></p>
 <p>Completed: <%= @task.completed %></p>
 
-<%= link_to 'Back to list', tasks_path %>
+<div class="px-3">
+  <i class="fa-solid fa-arrow-rotate-left text-primary"></i>
+  <%= link_to 'Back to list', tasks_path %>
+</div>
+
+<div class="px-3">
+  <i class="fa-solid fa-pen-to-square text-primary"></i>
+  <%= link_to 'Edit this task', edit_task_path(@task) %>
+</div>
+
+<div class="px-3">
+  <i class="fa-solid fa-trash text-primary"></i>
+  <%= link_to 'Delete this task',
+      task_path(@task),
+      data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this task?' } %>
+</div>
