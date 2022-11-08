@@ -3,9 +3,9 @@
 <ul class="list-unstyled p-3 border-bottom">
   <% @tasks.each do |task| %>
     <% if task.completed == false %>
-      <li><i class="fa-regular fa-square"></i> <%= link_to task.title, task_path(task) %></li>
+      <li><i class="fa-regular fa-square"></i> <a class="text-decoration-none" <%= link_to task.title, task_path(task) %></li>
     <% else %>
-      <li><i class="fa-regular fa-square-check"></i> <%= link_to task.title, task_path(task) %></li>
+      <li><i class="fa-regular fa-square-check"></i> <a class="text-decoration-none" <%= link_to task.title, task_path(task) %></li>
     <% end %>
   <% end %>
 </ul>
